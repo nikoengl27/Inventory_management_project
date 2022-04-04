@@ -9,6 +9,8 @@ public enum Manufacturer {
     APPLE,
     DELL,
     HP,
-    XIAOMI
+    XIAOMI,
+    HISENSE,
+    TOSHIBA
 
 }

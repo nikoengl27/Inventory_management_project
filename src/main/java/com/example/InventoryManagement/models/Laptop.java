@@ -4,11 +4,13 @@ public class Laptop extends Item{
 
     private double screenSize;
     private int RAM;
+    private int storage;
 
-    public Laptop(String model, Manufacturer manufacturer, String productNumber, String category, int stock, int buyingPrice, int sellingPrice, double screenSize, int RAM) {
+    public Laptop(String model, Manufacturer manufacturer, String productNumber, String category, double screenSize, int RAM, int storage, int stock, int buyingPrice, int sellingPrice) {
         super(model, manufacturer, productNumber, category, stock, buyingPrice, sellingPrice);
         this.screenSize = screenSize;
         this.RAM = RAM;
+        this.storage = storage;
     }
 
     public double getScreenSize() {
@@ -25,6 +27,14 @@ public class Laptop extends Item{
 
     public void setRAM(int RAM) {
         this.RAM = RAM;
+    }
+
+    public int getStorage() {
+        return storage;
+    }
+
+    public void setStorage(int storage) {
+        this.storage = storage;
     }
 
     public int purchasePrice() {
