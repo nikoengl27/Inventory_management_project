@@ -147,6 +147,9 @@ public class DataLoader implements ApplicationRunner {
         Laptop laptop10 = new Laptop("Chromebook", Manufacturer.ASUS, "las15c", "Laptop", 15.6, 4, 512, 13, 75, 179);
         laptopRepository.save(laptop10);
 
+        Laptop laptop11 = new Laptop("Chromebook", Manufacturer.ASUS, "las15c", "Laptop", 15.6, 4, 512, 13, 75, 179);
+        laptopRepository.save(laptop11);
+
 
 
 
