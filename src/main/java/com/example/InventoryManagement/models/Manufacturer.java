@@ -11,6 +11,8 @@ public enum Manufacturer {
     HP,
     XIAOMI,
     HISENSE,
-    TOSHIBA
+    TOSHIBA,
+    ONEPLUS,
+    ASUS
 
 }

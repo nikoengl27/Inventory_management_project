@@ -1,5 +1,6 @@
 package com.example.InventoryManagement.components;
 
+import com.example.InventoryManagement.models.Laptop;
 import com.example.InventoryManagement.models.Manufacturer;
 import com.example.InventoryManagement.models.MobilePhone;
 import com.example.InventoryManagement.models.TV;
@@ -29,7 +30,7 @@ public class DataLoader implements ApplicationRunner {
 
     public void run(ApplicationArguments args) {
 
-        TV tv1 = new TV("Q60T", Manufacturer.SAMSUNG, "??", "TV", 12, 250, 400, "4K QLED", true, 43);
+        TV tv1 = new TV("Q60T", Manufacturer.SAMSUNG, "tvsq60t", "TV", 12, 250, 400, "4K QLED", true, 43);
         tvRepository.save(tv1);
 
         TV tv2 = new TV("AU8000", Manufacturer.SAMSUNG, "??", "TV", 8, 200, 380, "Crystal 4K", true, 43);
@@ -89,11 +90,66 @@ public class DataLoader implements ApplicationRunner {
         TV tv20 = new TV("32WK3C63DB", Manufacturer.TOSHIBA, "??", "TV", 1, 110, 220, "HD Ready", false, 32);
         tvRepository.save(tv20);
 
+        MobilePhone phone1 = new MobilePhone("13", Manufacturer.APPLE, "productNumber", "Mobile Phone" , 10,750,1250,  "Midnight" , 6.1);
+        mobilePhoneRepository.save(phone1);
+
+        MobilePhone AppleIPhone13Pro = new MobilePhone("13 PRO", Manufacturer.APPLE, "mpai13p", "Mobile Phone" , 9,850,949,  "Midnight" , 6.1);
+        mobilePhoneRepository.save(AppleIPhone13Pro);
+
+        MobilePhone AppleIPhone13ProMax = new MobilePhone("13 PRO MAX", Manufacturer.APPLE, "mpai13m", "Mobile Phone" , 8,950,1049,  "Graphite" , 6.7);
+        mobilePhoneRepository.save(AppleIPhone13ProMax);
+
+        MobilePhone SamsungGalaxy22 = new MobilePhone("Galaxy S22", Manufacturer.SAMSUNG, "mpsgs22", "Mobile Phone" , 7,680,769,  "Pantom Black" , 6.1);
+        mobilePhoneRepository.save(SamsungGalaxy22);
+
+        MobilePhone SamsungGalaxy22Plus = new MobilePhone("Galaxy S22 Plus", Manufacturer.SAMSUNG, "mpsgs22p", "Mobile Phone" , 6,850,949,  "Phantom White" , 6.1);
+        mobilePhoneRepository.save(SamsungGalaxy22Plus);
+
+        MobilePhone SamsungGalaxy22Ultra = new MobilePhone("Galaxy S22 Ultra", Manufacturer.SAMSUNG, "mpsgs22u", "Mobile Phone" , 5,950,1149,  "Burgundy" , 6.8);
+        mobilePhoneRepository.save(SamsungGalaxy22Ultra);
+
+        MobilePhone Xiaomi11TPro = new MobilePhone("11T Pro", Manufacturer.XIAOMI, "mpx11t", "Mobile Phone" , 4,400,499,  "Celestial Blue" , 6.67);
+        mobilePhoneRepository.save(Xiaomi11TPro);
+
+        MobilePhone HuaweiP50Pro = new MobilePhone("P50 Pro", Manufacturer.HUAWEI, "mphp50p", "Mobile Phone" , 3,900,1099,  "Cocoa Gold" , 6.6);
+        mobilePhoneRepository.save(HuaweiP50Pro);
+
+        MobilePhone OnePlus10Pro = new MobilePhone("10 Pro", Manufacturer.ONEPLUS, "mp0p10p", "Mobile Phone" , 2,800,899,  "Emerald Forest" , 6.7);
+        mobilePhoneRepository.save(OnePlus10Pro);
+
+        Laptop laptop1 = new Laptop("Galaxy Book2 Pro 360", Manufacturer.SAMSUNG, "928", "Laptop",  13.3, 16, 164, 4, 950, 1399);
+        laptopRepository.save(laptop1);
+
+        Laptop laptop2 = new Laptop("Pavilion 14", Manufacturer.HP,"928", "Laptop", 14.0, 4, 164, 12, 230,479);
+        laptopRepository.save(laptop2);
+
+        Laptop laptop3 = new Laptop("Stream 11", Manufacturer.HP, "2453", "Laptop", 11.6, 4, 164, 5, 60, 199);
+        laptopRepository.save(laptop3);
+
+        Laptop laptop4 = new Laptop("MacBook Air", Manufacturer.APPLE, "2453", "Laptop", 13.3, 8, 256, 25,450, 887);
+        laptopRepository.save(laptop4);
+
+        Laptop laptop5 = new Laptop("Inspirion", Manufacturer.DELL,"2453", "Laptop", 15.6, 4, 256, 11,110, 289);
+        laptopRepository.save(laptop5);
+
+        Laptop laptop6 = new Laptop("MacBook Pro", Manufacturer.APPLE, "2453", "Laptop",13.0,8,256, 10, 850, 1299);
+        laptopRepository.save(laptop6);
+
+        Laptop laptop7 = new Laptop("MacBook Pro", Manufacturer.APPLE, "2453", "Laptop", 14.0, 16, 512, 20,1100,1899);
+        laptopRepository.save(laptop7);
+
+        Laptop laptop8 = new Laptop("MacBook Pro", Manufacturer.APPLE,"2453", "Laptop",16.0,32,1024, 7,1600, 2399);
+        laptopRepository.save(laptop8);
+
+        Laptop laptop9 = new Laptop("GRAM 17Z9OP", Manufacturer.LG, "2453", "Laptop", 17.0, 8, 512,4, 500, 949);
+        laptopRepository.save(laptop9);
+
+        Laptop laptop10 = new Laptop("Chromebook", Manufacturer.ASUS, "2453", "Laptop", 15.6, 4, 512, 13, 75, 179);
+        laptopRepository.save(laptop10);
 
 
 
-//        MobilePhone phone1 = new MobilePhone("iPhone13", Manufacturer.APPLE, "productNumber", "Mobile Phone" , 10,750,1250,  "Midnight" , 6.1);
-//        mobilePhoneRepository.save(phone1);
+
 
 
     }
