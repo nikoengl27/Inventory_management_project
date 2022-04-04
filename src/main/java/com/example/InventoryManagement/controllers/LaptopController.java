@@ -21,7 +21,6 @@ public class LaptopController {
         return new ResponseEntity<>(laptopRepository.findAll(), HttpStatus.OK);
     }
 
-
 }
 
 
