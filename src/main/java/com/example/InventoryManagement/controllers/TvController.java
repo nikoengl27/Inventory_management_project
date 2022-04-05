@@ -20,7 +20,4 @@ public class TvController {
         return new ResponseEntity<>(tvRepository.findAll(), HttpStatus.OK);
     }
 
-
-
-
 }
