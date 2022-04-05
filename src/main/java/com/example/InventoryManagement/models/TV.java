@@ -54,7 +54,6 @@ public class TV extends Item{
         return getBuyingPrice();
     }
 
-    @Override
     public int calculateMarkup() {
         return getSellingPrice() - getBuyingPrice();
     }
