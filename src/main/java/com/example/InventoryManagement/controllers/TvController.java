@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
-@RestControlle
+@RestController
 public class TvController {
 
     TvRepository tvRepository;
