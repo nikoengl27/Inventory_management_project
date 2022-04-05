@@ -14,6 +14,7 @@ import java.util.List;
 @RestController
 public class LaptopController {
 
+    @Autowired
     LaptopRepository laptopRepository;
 
     @GetMapping(value = "/laptops")
