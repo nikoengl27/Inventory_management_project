@@ -33,7 +33,7 @@ public class LaptopController {
         return new ResponseEntity<>(laptop, HttpStatus.CREATED);
     }
 
-    @PatchMapping(value="/tvs/{id}")
+    @PatchMapping(value="/laptops/{id}")
     public ResponseEntity<Laptop> updateLaptop(@RequestBody Laptop laptop){
         laptopRepository.save(laptop);
         return new ResponseEntity<>(laptop, HttpStatus.OK);
