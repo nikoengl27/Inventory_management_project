@@ -1,12 +1,13 @@
 package com.example.InventoryManagement.controllers;
 
+import com.example.InventoryManagement.models.Laptop;
 import com.example.InventoryManagement.models.MobilePhone;
+import com.example.InventoryManagement.models.TV;
 import com.example.InventoryManagement.repositories.MobilePhoneRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -20,4 +21,22 @@ public class MobilePhoneController {
     public ResponseEntity<List<MobilePhone>> getAllMobilePhones(){
         return new ResponseEntity<>(mobilePhoneRepository.findAll(),HttpStatus.OK);
     }
+
+    @GetMapping(value = "/mobilephones/{id}")
+    public ResponseEntity getMobilePhoneByID(@PathVariable Long id){
+        return new ResponseEntity(mobilePhoneRepository.findById(id), HttpStatus.OK);
+    }
+
+    @PostMapping(value="/mobilephones")
+    public ResponseEntity<MobilePhone> postMobilePhone(@RequestBody MobilePhone mobilePhone){
+        mobilePhoneRepository.save(mobilePhone);
+        return new ResponseEntity<>(mobilePhone, HttpStatus.CREATED);
+    }
+
+    @PatchMapping(value="/mobilephones/{id}")
+    public ResponseEntity<MobilePhone> updateMobilePhone(@RequestBody MobilePhone mobilePhone){
+        mobilePhoneRepository.save(mobilePhone);
+        return new ResponseEntity<>(mobilePhone, HttpStatus.OK);
+    }
+
 }

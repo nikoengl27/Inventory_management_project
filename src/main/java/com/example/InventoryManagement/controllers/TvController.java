@@ -6,9 +6,7 @@ import com.example.InventoryManagement.repositories.TvRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -24,9 +22,20 @@ public class TvController {
     }
 
     @GetMapping(value = "/tvs/{id}")
-    public ResponseEntity getTv(@PathVariable Long id){
-
+    public ResponseEntity getTvByID(@PathVariable Long id){
         return new ResponseEntity(tvRepository.findById(id), HttpStatus.OK);
+    }
+
+    @PostMapping(value="/tvs")
+    public ResponseEntity<TV> postTv(@RequestBody TV tv){
+       tvRepository.save(tv);
+        return new ResponseEntity<>(tv, HttpStatus.CREATED);
+    }
+
+    @PatchMapping(value="/tvs/{id}")
+    public ResponseEntity<TV> updateTv(@RequestBody TV tv){
+        tvRepository.save(tv);
+        return new ResponseEntity<>(tv, HttpStatus.OK);
     }
 
 
