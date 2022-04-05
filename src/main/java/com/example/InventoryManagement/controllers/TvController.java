@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
-@RestControlle
+@RestController
 public class TvController {
 
     TvRepository tvRepository;
@@ -19,5 +19,4 @@ public class TvController {
     public ResponseEntity<List<TV>> getAllTvs(){
         return new ResponseEntity<>(tvRepository.findAll(), HttpStatus.OK);
     }
-
 }
