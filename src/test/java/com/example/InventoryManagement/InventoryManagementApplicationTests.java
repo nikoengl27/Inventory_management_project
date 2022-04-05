@@ -11,6 +11,10 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import java.util.List;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 
 @SpringBootTest
 class InventoryManagementApplicationTests {
@@ -44,6 +48,24 @@ class InventoryManagementApplicationTests {
 	public void canAddTv() {
 		TV tv = new TV("Q60T", Manufacturer.SAMSUNG, "tvsq60t", "TV", 12, 250, 400, "4K QLED", true, 43);
 		tvRepository.save(tv);
+	}
+
+	@Test
+	public void canFindLaptopsByScreenSize() {
+		List<Laptop> foundLaptops = laptopRepository.findByScreenSize(15.6);
+		assertEquals(3, foundLaptops.size());
+	}
+
+	@Test
+	public void canFindTvsByResolution(){
+		List<TV> foundTvs = tvRepository.findByScreenResolution("HD Ready");
+		assertEquals(2, foundTvs.size());
+	}
+
+	@Test
+	public void canFindPhonesByManufacturer() {
+		List<MobilePhone> foundPhones = mobilePhoneRepository.findByManufacturer(Manufacturer.APPLE);
+		assertEquals(4, foundPhones.size());
 	}
 
 }
